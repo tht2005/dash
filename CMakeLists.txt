@@ -6,7 +6,6 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 set(SRC_FILES   src/main.c
-                src/process.c
                 src/job.c
     )
 
