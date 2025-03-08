@@ -1,0 +1,8 @@
+/**
+ * @file
+ * @brief Basic infomation
+ */
+
+#define DASH_SHELL                          "Dash Shell" 
+#define DASH_SHELL_VERSION_MAJOR            @dash_VERSION_MAJOR@
+#define DASH_SHELL_VERSION_MINOR            @dash_VERSION_MINOR@  
