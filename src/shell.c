@@ -4,12 +4,14 @@ pid_t shell_pgid;
 struct termios shell_tmodes;
 int shell_terminal;
 int shell_is_interactive;
+int shell_is_continue;
 
 void
 init_shell()
 {
     shell_terminal = STDIN_FILENO;
     shell_is_interactive = isatty(shell_terminal);
+    shell_is_continue = 1;
 
     if(shell_is_interactive)
     {
@@ -32,5 +34,20 @@ init_shell()
         tcsetpgrp (shell_terminal, shell_pgid);
         
         tcgetattr (shell_terminal, &shell_tmodes);
+    }
+}
+
+void
+loop_shell()
+{
+    while(shell_is_continue) {
+        printf("dash> $ ");
+
+        char *cmd = dfgets(stdin);
+        printf("cmd = %s\n", cmd);
+        if(strcmp(cmd, "exit") == 0) {
+            shell_is_continue = 0;
+        }
+        free(cmd);
     }
 }

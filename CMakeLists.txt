@@ -8,6 +8,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(SRC_FILES   src/main.c
                 src/job.c
                 src/shell.c
+                src/io.c
+                src/dalloc.c
     )
 
 add_executable(dash ${SRC_FILES})

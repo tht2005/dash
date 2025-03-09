@@ -11,6 +11,9 @@
 #include <stdlib.h>
 #include <signal.h>
 #include <stdio.h>
+#include <string.h>
+
+#include "io.h"
 
 extern pid_t shell_pgid;
 extern struct termios shell_tmodes;
@@ -19,5 +22,8 @@ extern int shell_is_interactive;
 
 void
 init_shell();
+
+void
+loop_shell();
 
 #endif
