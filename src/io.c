@@ -1,7 +1,5 @@
 #include "io.h"
 
-#define DFGETS_INIT_BUFFER_LEN              64
-
 char *buf=NULL;
 int buflen, curlen;
 

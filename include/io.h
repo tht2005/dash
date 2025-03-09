@@ -5,6 +5,10 @@
 
 #include "dalloc.h"
 
+#ifndef DFGETS_INIT_BUFFER_LEN
+#define DFGETS_INIT_BUFFER_LEN              64
+#endif
+
 char*
 dfgets (FILE* stream);
 
