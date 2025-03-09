@@ -4,7 +4,7 @@ char *buf=NULL;
 int buflen, curlen;
 
 void extendbuf() {
-    buf = drealloc(buf, buflen <<= 1);
+    buf = drealloc(buf, (buflen <<= 1) * sizeof (char) );
 }
 
 void freebuf() {
