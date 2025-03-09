@@ -40,13 +40,30 @@ init_shell()
 void
 loop_shell()
 {
+    printf ("debug: %d\n", COMMAND_BEGIN);
+    printf ("debug: %d\n", COMMAND_END);
+    printf ("debug: %d\n", ARITHMETIC_BEGIN);
+    printf ("debug: %d\n", ARITHMETIC_END);
+
     while(shell_is_continue) {
         printf("dash> $ ");
 
         char *cmd = dfgets(stdin);
-        printf("cmd = %s\n", cmd);
+
+        printf("cmd = \"%s\"\n", cmd);
+
+        //temporary for gracefully exit
         if(strcmp(cmd, "exit") == 0) {
             shell_is_continue = 0;
+        }
+        else {
+            token tk;
+
+            init_interpreter (cmd);
+            while ((tk = next_token ()).type != ENDFILE)
+            {
+                printf ("debug: %d %s\n", tk.type, tk.str);
+            }
         }
 
         freebuf();

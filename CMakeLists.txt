@@ -10,6 +10,8 @@ set(SRC_FILES   src/main.c
                 src/shell.c
                 src/io.c
                 src/dalloc.c
+                src/interpreter.c
+                src/cpp_string.c
     )
 
 add_executable(dash ${SRC_FILES})
