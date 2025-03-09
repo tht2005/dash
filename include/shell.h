@@ -14,6 +14,7 @@
 #include <string.h>
 
 #include "io.h"
+#include "interpreter.h"
 
 extern pid_t shell_pgid;
 extern struct termios shell_tmodes;
