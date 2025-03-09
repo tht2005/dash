@@ -189,7 +189,7 @@ continue_job (job *j, int foreground)
 void
 free_job (job *j)
 {
-
+    perror("free job not implemented");
 }
 
 void
@@ -238,7 +238,7 @@ launch_job (job *j, int foreground)
     int mypipe[2], infile, outfile;
 
     infile = j->stdin;
-    for (p = j->first_process; j; j = j->next)
+    for (p = j->first_process; p; p = p->next)
     {
         if (p->next)
         {
