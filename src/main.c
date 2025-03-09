@@ -30,14 +30,17 @@ int main()
     //     struct termios tmodes;
     //     int stdin, stdout, stderr;
     // } job;
-    
-    char *argv[] = { "echo", "Hello, World\n" };
 
-    process p = { NULL, argv, 0, 0, 0, 0 };
+    char *argv[] = { "echo", "hello, world" };
+    char *argv2[] = { "tee" };
 
-    job j = { NULL, "echo \"Hello, World\"", &p, 0, 0, shell_tmodes, 0, 1, 2 };
+    process p3 = { NULL, argv2, 0, 0, 0, 0 };
+    process p2 = { &p3, argv2, 0, 0, 0, 0 };
+    process p1 = { &p2, argv, 0, 0, 0, 0 };
 
-    launch_job(&j, 0);
+    job j = { NULL, "echo \"Hello, World\"", &p1, 0, 0, shell_tmodes, 0, 1, 2 };
+
+    launch_job(&j, 1);
 
     return 0;
 }

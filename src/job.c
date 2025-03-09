@@ -56,16 +56,16 @@ mark_process_status (pid_t pid, int status)
 
     if (pid > 0) {
         for (j = first_job; j; j = j->next)
-            for (p = j->first_process; j; j = j->next)
+            for (p = j->first_process; p; p = p->next)
                 if (p->pid == pid)
                 {
                     p->status = status;
-                    if (WIFSTOPPED(status))
+                    if (WIFSTOPPED (status))
                         p->stopped = 1;
                     else
                     {
                         p->completed = 1;
-                        if (WIFSIGNALED(status))
+                        if (WIFSIGNALED (status))
                             fprintf(stderr, "%d: Terminated by signal %d.\n", (int)pid, WTERMSIG(status));
                     }
                     return 0;
@@ -96,7 +96,7 @@ job_is_stopped(job *j)
 {
     process *p;
 
-    for (p = j->first_process; j; j = j->next)
+    for (p = j->first_process; p; p = p->next)
         if (!p->completed && !p->stopped)
             return 0;
     return 1;

@@ -34,14 +34,11 @@ typedef struct job
 } job;
 
 
-// main.c
+// shell.c
 extern pid_t shell_pgid;
 extern struct termios shell_tmodes;
 extern int shell_terminal;
 extern int shell_is_interactive;
-
-// job.c
-extern job *first_job;
 
 void
 launch_process (process *p, pid_t pgid,
