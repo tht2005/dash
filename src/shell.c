@@ -48,6 +48,7 @@ loop_shell()
         if(strcmp(cmd, "exit") == 0) {
             shell_is_continue = 0;
         }
-        free(cmd);
+
+        freebuf();
     }
 }

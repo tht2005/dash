@@ -2,11 +2,18 @@
 
 #define DFGETS_INIT_BUFFER_LEN              64
 
-char *buf;
+char *buf=NULL;
 int buflen, curlen;
 
 void extendbuf() {
     buf = drealloc(buf, buflen <<= 1);
+}
+
+void freebuf() {
+    if(buf) {
+        free(buf);
+        buf = NULL;
+    }
 }
 
 char* dfgets(FILE* stream) {
