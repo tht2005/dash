@@ -9,7 +9,8 @@
  *
  * @param size 
  */
-void* dalloc(size_t size);
+void*
+dalloc(size_t size);
 
 /**
  * @brief Wrapper for realloc
@@ -17,6 +18,7 @@ void* dalloc(size_t size);
  * @param ptr 
  * @param size 
  */
-void* drealloc(void* ptr, size_t size);
+void*
+drealloc(void* ptr, size_t size);
 
 #endif

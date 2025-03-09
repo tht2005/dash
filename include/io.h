@@ -5,8 +5,10 @@
 
 #include "dalloc.h"
 
-char* dfgets (FILE* stream);
+char*
+dfgets (FILE* stream);
 
-void freebuf ();
+void
+freebuf ();
 
 #endif
