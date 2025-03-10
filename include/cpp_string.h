@@ -17,7 +17,7 @@ __dynamic_char_arr;
 typedef __dynamic_char_arr* string;
 
 #ifndef STRING_DEFAULT_MAX_LEN
-#define STRING_DEFAULT_MAX_LEN      16
+#define STRING_DEFAULT_MAX_LEN      8
 #endif
 
 int
